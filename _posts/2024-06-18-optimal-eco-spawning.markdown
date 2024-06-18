@@ -11,13 +11,12 @@ It seems that understanding the theory behind spawning systems is difficult for 
 <h2>{{ "Spawning Targets" }}</h2>
 
 The first thing that we need to figure out is what we want our total population of creeps to look like. This is important to do because without a coherent idea of what we want the total population to be, we will probably end up with an inefficient ratio of roles. We can keep things running smoothly by achieving a good balance between different categories of creeps. 
-
 <h3>{{ "Categories" }}</h3>
 
 Speaking of which, what are the categories we need to achieve balance between? I think they can (and should) be neatly divided into these three categories:
 
-1) Energy production
-2) Transportation
+1) Energy production<br>
+2) Transportation<br>
 3) Energy usage
 
 We want the energy production and usage to be balanced so that we don't have energy going to waste or workers sitting idle, and we want to have enough transportation to get the energy where it needs to go without haulers sitting idle. So these three categories are ultimately what we want to balance for spawning, to make sure that our economy is achieving maximum productivity on whatever type of work we are doing. That type of work may vary, but I think it it always beneficial to balance worker spawning as a whole rather than individual categories, since our energy spending as a whole is what we need to balance against our production and transportation.
@@ -30,30 +29,22 @@ For transportation, we care about the total carry capacity of all of our haulers
 
 For energy usage, we can mostly use a similar scheme as what we use for haulers, counting work parts instead of carry parts, but there is one notable exception - when work parts are used for building, they use 5 energy per tick instead of the 1 energy per tick used for other tasks. So we need to count them as 5 times as much. And that means that rather than directly being target work parts, we quantify workers in terms of target energy spending per tick.
 
+<h3>{{ "Regulation (Haulers and Workers)" }}</h3>
 
+There are two main approaches to regulating how much we should spawn of each category -
 
+1) Calculating how much we need of each category based on expectations
+2) Observing and reacting to the real game conditions
 
+Both of those approaches have advantages, so I think the optimal approach is to do both! That is, I think we should keep a target value in memory for each category and adjust it in two different ways -
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+1) Whenever we make a change to our energy income, we apply an adjustment to our target values for the other categories based on our calculated expectations.
+2) Whenever we observe a surplus or shortage of a category, we apply an adjustment to the target values based on that observation.
 
-Jekyll requires blog post files to be named according to the following format:
+With that combined approach, we end up with a target that is close to optimal after every adjustment to our income (from our calculated expectation), but we also have the reactive system to hone in on exactly the right value for the real game conditions.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+<h3>{{ "Regulation (Miners and Reservers)" }}</h3>
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+This category is different, because it affects the entire scale of our economy. We increase it when we think we can handle more, and decrease it when we think we can't handle as much. This can be constrained by either spawn time or CPU (or we could drop remotes due to danger). Another thing of note is that changing the reservation status of a remote room is a change to energy income, and should be treated accordingly: The targets for haulers and workers should react, and if the change puts us beyond our constraints, we should scale back to stay inside our constraints.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+<h2>{{ "Spawning Priorities" }}</h2>
