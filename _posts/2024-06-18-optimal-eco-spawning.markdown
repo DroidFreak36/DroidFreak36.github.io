@@ -11,7 +11,8 @@ It seems that understanding the theory behind spawning systems is difficult for 
 <h2>{{ "Spawning Targets" }}</h2>
 
 The first thing that we need to figure out is what we want our total population of creeps to look like. This is important to do because without a coherent idea of what we want the total population to be, we will probably end up with an inefficient ratio of roles. We can keep things running smoothly by achieving a good balance between different categories of creeps. 
-<h3>{{ "Categories" }}</h3>
+
+<h4>{{ "Categories" }}</h4>
 
 Speaking of which, what are the categories we need to achieve balance between? I think they can (and should) be neatly divided into these three categories:
 
@@ -21,7 +22,7 @@ Speaking of which, what are the categories we need to achieve balance between? I
 
 We want the energy production and usage to be balanced so that we don't have energy going to waste or workers sitting idle, and we want to have enough transportation to get the energy where it needs to go without haulers sitting idle. So these three categories are ultimately what we want to balance for spawning, to make sure that our economy is achieving maximum productivity on whatever type of work we are doing. That type of work may vary, but I think it it always beneficial to balance worker spawning as a whole rather than individual categories, since our energy spending as a whole is what we need to balance against our production and transportation.
 
-<h3>{{ "Units" }}</h3>
+<h4>{{ "Units" }}</h4>
 
 For energy production, it's quantified in terms of how many sources we're trying to mine, and whether or not the rooms are reserved. The only decisions that effect this category are decisions about when we should add or remove sources, or change the reservation status of a source, and those decisions have a ripple effect across the whole economy, so this category determines the magnitude of our economy as a whole, asuming that the other categories are scaled appropriately. This is the category that we directly adjust when we have macro decisions to make, such as reducing total spawn usage or total CPU usage by dropping a remote, or using addition spawn time and CPU to get a larger economy.
 
@@ -48,3 +49,4 @@ With that combined approach, we end up with a target that is close to optimal af
 This category is different, because it affects the entire scale of our economy. We increase it when we think we can handle more, and decrease it when we think we can't handle as much. This can be constrained by either spawn time or CPU (or we could drop remotes due to danger). Another thing of note is that changing the reservation status of a remote room is a change to energy income, and should be treated accordingly: The targets for haulers and workers should react, and if the change puts us beyond our constraints, we should scale back to stay inside our constraints.
 
 <h2>{{ "Spawning Priorities" }}</h2>
+
