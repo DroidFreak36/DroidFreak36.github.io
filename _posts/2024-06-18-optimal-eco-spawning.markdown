@@ -2,7 +2,6 @@
 layout: single
 title:  "Optimal Eco Spawning"
 date:   2024-06-18 0:16:34 -0500
-categories: jekyll update
 ---
 
 
