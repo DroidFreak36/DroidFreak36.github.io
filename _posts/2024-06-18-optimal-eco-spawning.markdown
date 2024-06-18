@@ -45,6 +45,8 @@ Both of those approaches have advantages, so I think the optimal approach is to 
 
 With that combined approach, we end up with a target that is close to optimal after every adjustment to our income (from our calculated expectation), but we also have the reactive system to hone in on exactly the right value for the real game conditions.
 
+This holds true for haulers ar all times, since we always want to match hauler supply to demand, but once we have a storage (and/or terminal) we no longer have to have our worker target strictly follow our net income. We can adjust our worker target to aim for a target level of reserve energy instead, or according to other priorities.
+
 <h4>{{ "Regulation (Miners and Reservers)" }}</h4>
 
 This category is different, because it affects the entire scale of our economy. We increase it when we think we can handle more, and decrease it when we think we can't handle as much. This can be constrained by either spawn time or CPU (or we could drop remotes due to danger). Another thing of note is that changing the reservation status of a remote room is a change to energy income, and should be treated accordingly: The targets for haulers and workers should react, and if the change puts us beyond our constraints, we should scale back to stay inside our constraints.
@@ -84,3 +86,7 @@ Within the income category, the main thing is to prioritize closer sources earli
 Within the transportation category, ideally all the creeps should be the same. If you have separate hualers for different roles (like remote haulers) I would advise eliminating that distinction. Although, in the meantime, the best way to handle it if you have separate remote haulers would probably be to lump the remote haulers for each source into the income category instead. It's beyond the scope of this post, in any case. :P
 
 Within the worker category, the top priority is a tiny 1-work upgrader if your controller downgrade timer is low. The next priority is a repairer if you have structures in need of repairs. Next, spawn builders if there are things to build. Next, spawn additional repairers if you want to build up ramparts. And finally, spawn upgraders to use the rest of the energy.
+
+<h2>{{ "Conclusion" }}</h2>
+
+This should give you a pretty good idea of what to aim for, but of course the details of implementing it are another matter. There's certainly a lot more detail that could be said about it. I'm always open to talking about those details if you reach out to me on the Screeps Discord.
