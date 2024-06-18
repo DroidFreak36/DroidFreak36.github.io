@@ -24,6 +24,8 @@ We want the energy production and usage to be balanced so that we don't have ene
 
 <h4>{{ "Units" }}</h4>
 
+Next, what are the units that we use to quantify each category? That varies per category.
+
 For energy production, it's quantified in terms of how many sources we're trying to mine, and whether or not the rooms are reserved. The only decisions that effect this category are decisions about when we should add or remove sources, or change the reservation status of a source, and those decisions have a ripple effect across the whole economy, so this category determines the magnitude of our economy as a whole, asuming that the other categories are scaled appropriately. This is the category that we directly adjust when we have macro decisions to make, such as reducing total spawn usage or total CPU usage by dropping a remote, or using addition spawn time and CPU to get a larger economy.
 
 For transportation, we care about the total carry capacity of all of our haulers (assuming that they all move at full speed in most cases, which should be true if you're using appropriate bodies for your road status). This is equivalent to the number of carry parts across all of our haulers (with a multiplier for boosts, if you are using any). So we represent the target for this category as the target number of carry parts.
