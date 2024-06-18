@@ -1,9 +1,15 @@
 ---
 layout: single
-title:  "Welcome to Jekyll!"
-date:   2024-06-17 12:58:34 -0500
+title:  "Optimal Eco Spawning"
+date:   2024-06-18 0:16:34 -0500
 categories: jekyll update
 ---
+
+It seems that understanding the theory behind spawning systems is difficult for a lot of players, so this post is intended to help with that. I believe that with this theory, it is possible to get spawning decisions that are quite optimal. The focus here is solely on eco spawning. Other types of spawning can be fit in with whatever priority seems appropriate and the eco spawning can scale down appropriately, still using the theory outlined in this post to make the most of the available spawn time.
+
+<h1>{{ "Spawning Targets" }}</h1>
+
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
