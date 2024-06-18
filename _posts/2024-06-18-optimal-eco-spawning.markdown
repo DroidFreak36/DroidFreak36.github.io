@@ -13,7 +13,7 @@ The first thing that we need to figure out is what we want our total population 
 
 <h4>{{ "Categories" }}</h4>
 
-Speaking of which, what are the categories we need to achieve balance between? I think they can (and should) be neatly divided into these three categories:
+Speaking of which, what are the categories we need to achieve balance between? I think that eco creeps can (and should) be neatly divided into these three categories:
 
 1) Energy production<br>
 2) Transportation<br>
