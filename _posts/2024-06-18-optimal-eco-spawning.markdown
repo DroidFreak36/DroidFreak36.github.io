@@ -45,7 +45,7 @@ Both of those approaches have advantages, so I think the optimal approach is to 
 
 With that combined approach, we end up with a target that is close to optimal after every adjustment to our income (from our calculated expectation), but we also have the reactive system to hone in on exactly the right value for the real game conditions.
 
-This holds true for haulers ar all times, since we always want to match hauler supply to demand, but once we have a storage (and/or terminal) we no longer have to have our worker target strictly follow our net income. We can adjust our worker target to aim for a target level of reserve energy instead, or according to other priorities.
+This holds true for haulers at all times, since we always want to match hauler supply to demand, but once we have a storage (and/or terminal) we no longer have to have our worker target strictly follow our net income. We can adjust our worker target to aim for a target level of reserve energy instead, or according to other priorities.
 
 <h4>{{ "Regulation (Miners and Reservers)" }}</h4>
 
